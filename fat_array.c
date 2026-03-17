@@ -6,7 +6,7 @@
 /*   By: lmilando <lmilando@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 17:05:50 by lmilando          #+#    #+#             */
-/*   Updated: 2026/03/17 17:44:27 by lmilando         ###   ########.fr       */
+/*   Updated: 2026/03/17 17:52:20 by lmilando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ t_array	*ft_alloc_array(size_t cap)
 	return (ret);
 }
 
+void	ft_free_array(t_array *arr)
+{
+	if (arr == NULL)
+		return ;	
+	free(arr->arr);
+	arr->arr = NULL;
+	free(arr);
+}
 t_array	*ft_memset_array(t_array *dest, t_byte byte)
 {
 	size_t	i;

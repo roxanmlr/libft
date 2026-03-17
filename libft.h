@@ -6,7 +6,7 @@
 /*   By: lmilando <lmilando@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 17:00:17 by lmilando          #+#    #+#             */
-/*   Updated: 2026/03/17 17:41:46 by lmilando         ###   ########.fr       */
+/*   Updated: 2026/03/17 17:51:23 by lmilando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_array {
 }				t_array;
 
 t_array		*ft_alloc_array(size_t cap);
+void		ft_free_array(t_array *arr);
 t_array		*ft_memset_array(t_array *dest, t_byte byte);
 t_array		*ft_memmove_array(t_array *dest, t_array *src, size_t len);
 #endif
