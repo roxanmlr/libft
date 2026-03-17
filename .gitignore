@@ -1,3 +1,4 @@
 libft.a
 build/*
 *.swp
+*.elf
