@@ -6,13 +6,14 @@
 /*   By: lmilando <lmilando@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 17:05:50 by lmilando          #+#    #+#             */
-/*   Updated: 2026/03/17 18:47:31 by lmilando         ###   ########.fr       */
+/*   Updated: 2026/03/18 08:21:41 by lmilando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_array	*ft_alloc_array(size_t cap)
+t_array	*ft_alloc_array(size_t cap, void *(*malloc)(size_t), \
+						void (*free)(void *))
 {
 	t_array	*ret;
 	size_t	i;
@@ -34,14 +35,15 @@ t_array	*ft_alloc_array(size_t cap)
 	return (ret);
 }
 
-void	ft_free_array(t_array *arr)
+void	ft_free_array(t_array *arr, void (*free)(void *))
 {
 	if (arr == NULL)
-		return ;	
+		return ;
 	free(arr->arr);
 	arr->arr = NULL;
 	free(arr);
 }
+
 t_array	*ft_memset_array(t_array *dest, t_byte byte)
 {
 	size_t	i;

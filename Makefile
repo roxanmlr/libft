@@ -7,6 +7,7 @@ TEST_SOURCES	=	test_fat_array.c
 TEST_OBJECTS	=	$(patsubst %.c,build/%.o,$(TEST_SOURCES))
 CC				=	clang
 SAN				=	-fsanitize=address,undefined 
+SAN				=
 CFLAGS			=	-Wall -Wextra -Werror -ggdb
 
 .PHONY: all clean fclean re test
